@@ -1,12 +1,9 @@
-<div class="container">
+<div class="d- flex container">
 <br>
-
-  
 
   <%= simple_form_for @order, url: product_orders_path(@product), method: :post do |form| %>
     <%= form.hidden_field :product_id, value: @product.id %>
     <%= form.hidden_field :total_price, value: @product.price %>
-
 
   <div class="product-table">
     <table>
@@ -20,7 +17,7 @@
       <tbody>
         <tr>
           <td></td>
-          
+
           <td><%= @product.name %></td>
           <td><%= number_to_currency(@product.price) %></td>
         </tr>
@@ -28,11 +25,11 @@
     </table>
   </div>
 
-    <div class="form-actions">
-      <%= form.button :submit, "Finalizar Compra", class: "btn btn-comprar mt-3" %>
-    </div>
+  <div class="form-actions">
+    <%= form.button :submit, "Finalizar Compra", class: "btn btn-comprar mt-3" %>
+  </div>
   <% end %>
-<br>
+  <br>
   <%= link_to "Voltar ao Produto", product_path(@product), class: "btn-voltar-product" %>
 
 </div>
